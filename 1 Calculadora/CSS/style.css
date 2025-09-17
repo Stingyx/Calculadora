@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(90deg,rgba(3, 25, 38, 0.31) 0%, rgba(9, 82, 121, 1) 35%, rgba(25, 113, 168, 1) 100%);
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #9DBEBB;
+    background-color: white;
+    #display{
+        color: black;
+        margin: 0 10px;
+        height: 150px;
+        width: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+    #clear{
+        background-color: #468189;
+        color: white;
+    }
+    .btn-number{
+        background-color: #77ACA2;
+        color: whitesmoke;
+    }
+    .btn-operator{
+        background-color: #77ACA2;
+        color: whitesmoke;
+    }
+    #btn-equal{
+        background-color: #77ACA2;
+        color: whitesmoke;
+        height: 130px;
+    }
+    &.dark{
+        background-color: black;
+        #display{
+            color: white;
+        }#clear{
+            background-color: #052639;
+            color: white;
+        }
+        .btn-number{
+            background-color: #1C3336;
+            color: whitesmoke;
+        }
+        .btn-operator{
+            background-color: #DCDC04;
+            color: black;
+        }
+        #btn-equal{
+            background-color: #1C3336;
+            color: whitesmoke;
+            height: 130px;
+        }
+    }
+}
+
+.theme-toggler{
+    position: absolute;
+    top:30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 5s ease-in-out ;
+    &::before{
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        top:50%;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        background-color: #333;
+        z-index: -1;
+    }
+}
+.theme-toggler.active{
+    color: #333;
+    &::before{
+        background-color: #DCDC04;
+    }
+}
+button{
+    height:60px ;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
